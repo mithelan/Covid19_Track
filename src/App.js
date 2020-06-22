@@ -5,7 +5,7 @@ import {Cards,Country,Graph} from './components'
 import styles from './App.module.css'
 import {fetchData} from "./api";
 import Typography from "@material-ui/core/Typography";
-import Navbar from "./components/NavBar/navbar";
+
 
 import Help from "./components/Help/help";
 import display from "./components/Covid/Display"
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className={styles.container}>
           <BrowserRouter>
-          <Navbar/>
+
               <Switch>
                   <Route exact path="/" component={display}/>
                   <Route exact path="/help" component={Help}/>
