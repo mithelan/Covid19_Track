@@ -1,60 +1,44 @@
 import React, { Component } from 'react'
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import corona from './s.jpg'
 import {Cards,Country,Graph} from './components'
 import styles from './App.module.css'
 import {fetchData} from "./api";
 import Typography from "@material-ui/core/Typography";
+import Navbar from "./components/NavBar/navbar";
 
+import Help from "./components/Help/help";
+import display from "./components/Covid/Display"
 class App extends Component {
-
-    state={
-        data:{},
-        country:''
-
-    }
-
-    async componentDidMount() {
-        const newData=await fetchData();
-
-        this.setState({data:newData})
-
-    }
-
-    handleCountryChange =async (country)=>{
-        //fecth
-        //setstae
-       //
-        const newData=await fetchData(country);
-
-        this.setState({data:newData,country:country})
-    }
 
 
     render() {
-        const {data,country}=this.state;
+
 
 
     return (
       <div className={styles.container}>
+          <BrowserRouter>
+          <Navbar/>
+              <Switch>
+                  <Route exact path="/" component={display}/>
+                  <Route exact path="/help" component={Help}/>
 
-          <img className={styles.image} src={corona} alt='img' />
+              </Switch>
+          </BrowserRouter>
 
-        <Cards data={data}/>
-        <Country handleCountryChange={this.handleCountryChange}/>
-        <Graph data={data} country={country}/>
+
+
+
 
 
 
         <div className={styles.footer}>
 
             <Typography color='black'>
-                Powered by VSK
+                Powered by Beat the eaters team
             </Typography>
-
-
-
-        </div>
+          </div>
 
       </div>
     )
