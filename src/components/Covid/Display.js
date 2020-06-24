@@ -38,7 +38,7 @@ class Display extends Component {
 
 
                 <div className='image'>
-                <img className={styles.image} src={corona} alt='img' />
+              
 
                 </div>
 
