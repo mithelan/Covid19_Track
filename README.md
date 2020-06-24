@@ -1,4 +1,4 @@
-https://covid19-track.mithelan.vercel.app/ check the page
+https://covid19-track-pearl.vercel.app/ check the page
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
